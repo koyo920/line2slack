@@ -14,9 +14,9 @@ app = Flask(__name__)
 # heroku config:set SLACK_WEB_HOOKS_URL=https://hooks.slack.com/services/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 --app line2nombey
 
 # 認証情報の取得
-CHANNEL_ACCESS_TOKEN = os.environ['C6HvXpZ/biiV1QHrzLeQTWFPVhZo4kICW8s7bSFRbFG5Oo4irGEGx8Gmx+TResYLTQLYXcBKHeSW+FCVZ7NuF4FBjWPxoOFwRalf3sCCx64a0PxVQVi/DtrVVmjXorYy1EFtTkBGgR8MhuxuHZ0ssgdB04t89/1O/w1cDnyilFU=']
-CHANNEL_SECRET = os.environ['60778b49be8dd61d2537eb1e616e0bfb']
-WEB_HOOK_LINKS = os.environ['https://hooks.slack.com/services/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']
+CHANNEL_ACCESS_TOKEN = os.environ.get["BIDIMTF3bcJZl86K9h2iy9H8BZQf+E0jz5so+L0cXNvbvjTxTa4FiK0bOi40Ra9M8q+CI32ROyHFxIejnosFjQlz/7IFRytCxYkWs2ftI6EKxInc5ONHcH988+YlcsWGcxXQLRK2yIjf2O5JzWEVqgdB04t89/1O/w1cDnyilFU="]
+CHANNEL_SECRET = os.environ.get["60778b49be8dd61d2537eb1e616e0bfb"]
+WEB_HOOK_LINKS = os.environ.get["https://hooks.slack.com/services/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"]
 
 line_bot_api = LineBotApi(CHANNEL_ACCESS_TOKEN)
 handler = WebhookHandler(CHANNEL_SECRET)
