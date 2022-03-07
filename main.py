@@ -9,6 +9,10 @@ from linebot.models import MessageEvent, TextMessage
 
 app = Flask(__name__)
 
+# heroku config:set LINE_CHANNEL_ACCESS_TOKEN=C6HvXpZ/biiV1QHrzLeQTWFPVhZo4kICW8s7bSFRbFG5Oo4irGEGx8Gmx+TResYLTQLYXcBKHeSW+FCVZ7NuF4FBjWPxoOFwRalf3sCCx64a0PxVQVi/DtrVVmjXorYy1EFtTkBGgR8MhuxuHZ0ssgdB04t89/1O/w1cDnyilFU= --app line2nombey
+# heroku config:set LINE_CHANNEL_SECRET=60778b49be8dd61d2537eb1e616e0bfb --app line2nombey
+# heroku config:set SLACK_WEB_HOOKS_URL=https://hooks.slack.com/services/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 --app line2nombey
+
 # 認証情報の取得
 CHANNEL_ACCESS_TOKEN = os.environ["C6HvXpZ/biiV1QHrzLeQTWFPVhZo4kICW8s7bSFRbFG5Oo4irGEGx8Gmx+TResYLTQLYXcBKHeSW+FCVZ7NuF4FBjWPxoOFwRalf3sCCx64a0PxVQVi/DtrVVmjXorYy1EFtTkBGgR8MhuxuHZ0ssgdB04t89/1O/w1cDnyilFU="]
 CHANNEL_SECRET = os.environ["60778b49be8dd61d2537eb1e616e0bfb"]
@@ -73,7 +77,7 @@ def handle_text_message(event):
     """
     Text Message の処理
     """
-pip3 install freeze    slack_info = slackweb.Slack(url=WEB_HOOK_LINKS)
+    slack_info = slackweb.Slack(url=WEB_HOOK_LINKS)
 
     # トーク情報の取得
     user_id, user_name, msg_type, room_id = get_event_info(event)
